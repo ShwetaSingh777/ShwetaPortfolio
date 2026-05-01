@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="Images/favicon.svg">
+  <link rel="stylesheet" href="bs/css/bootstrap.css">
+  <link rel="stylesheet" href="bs/css/mdb.css">
+  <link rel="stylesheet" href="bs/css/style.css">
+  <link rel="stylesheet" media="(max-width:500px)" href="mobile.css">
+  <link rel="stylesheet" media="(min-width:501px) and (max-width:768px)" href="tablet.css">
+  <link rel="stylesheet" media="(min-width:769px) and (max-width:1200px)" href="laptop.css">
+  <link rel="stylesheet" media="(min-width:1201px)" href="wide.css">
+  <title>Shweta | Loire</title>
+
+  <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .custom-cursor {
+      cursor: url('Images/cursor.png'), pointer;
+    }
+
+    @font-face {
+      font-family: "MyCustomFont";
+      src: url("Images/FONTS/SPETETRIAL.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Typewritter";
+      src: url("Images/FONTS/Old Typewriter Font.ttf") format("truetype");
+    }
+
+    /* Existing navbar styling */
+    .navbar {
+      box-shadow: none !important;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      background-color: #e4d0b0;
+    }
+
+     .img-container {
+  width: 100%;
+  margin: 0 auto;    /* centers and prevents overflow */
+  overflow: hidden;  /* ensures nothing spills out */
+}
+
+
+.two-img-row img {
+  width: 50%;
+  min-width: 0; /* prevents flex overflow behavior */
+  object-fit: cover;
+}
+
+
+    .two-img-row {
+  display: flex;
+  width: 100%;
+  gap: 25px; /* center gutter size you can adjust anytime */
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.two-img-row video {
+  width: 50%;
+  min-width: 0;
+  object-fit: cover;
+}
+
+
+
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #e4d0b0;
+        font-size: 100px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 9999;
+        opacity: 0;
+        transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+      }
+
+      .navbar-collapse.show {
+        opacity: 1;
+      }
+
+      .navbar-nav {
+        margin-left: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 100px !important;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 32px;
+        margin-bottom: 25px;
+      }
+
+      .navbar-toggler {
+        position: relative;
+        z-index: 10000;
+      }
+
+      .navbar-collapse .nav-link {
+        font-size: 70px !important;
+        text-align: center;
+      }
+    }
+
+
+
+
+
+    .active-head{
+      color: grey !important;
+    }
+    a{
+      text-align: center;
+      font-family: "MyCustomFont", sans-serif;
+      color: #2a0f03;
+      font-size: 30px;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    #image {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      box-shadow: none;
+      z-index: 1;
+    }
+
+
+    body{
+      background-color: #e4d0b0;
+      color: #2a0f03;
+    }
+
+    .full-video {
+      width: 100%;
+      display: block;
+    }
+
+    h1{
+      font-family: "MyCustomFont", sans-serif;
+    }
+
+    p{
+      font-size: 20px;
+      font-family: "Typewritter", sans-serif;
+    }
+
+    h3{
+      font-family: "MyCustomFont", sans-serif;
+    }
+
+
+    .read-more-btn {
+      background: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0;
+      font-size: 1.5rem;
+      text-decoration: underline;
+      font-family: "Typewritter";
+    }
+
+    .d-none {
+      display: none;
+    }
+
+
+
+    .left-arrow{
+      display: block;
+      width: 50%;
+      float: left;
+      font-size: 25px;
+      color: #2a0f03;
+    }
+    .left-arrow a,.right-arrow a{
+      color: #2a0f03 !important;
+    }
+    .right-arrow{
+      display: block;
+      width: 50%;
+      float: right;
+      text-align: right;
+      font-size: 25px;
+      color: #2a0f03;
+    }
+
+
+
+    .footer-box {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start; /* keeps text at top */
+      position: relative;
+    }
+
+    .footer-content {
+      max-width: 65%; /* prevents text from touching image */
+    }
+
+    .footer-img {
+      width: 220px; /* adjust as needed */
+    }
+
+    /* Hide image on mobile */
+    @media (max-width: 767px) {
+      .footer-box {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .footer-img {
+        display: none;
+      }
+
+      .footer-content {
+        max-width: 100%;
+      }
+    }
+
+    .footer-text{
+      font-family: 'Typewritter', sans-serif;
+      color: #2a0f03 !important;
+    }
+    .links{
+      font-family: 'Typewritter', sans-serif;
+    }
+    .links a{
+      color: #2a0f03 !important;
+      margin-right: 20px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<!--------------navbar-------------->
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+  <a class="navbar-brand" href="index.html">
+    <img src="Images/Home_Page/LOGO.png" class="custom-cursor" width="150px">
+  </a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#simpleNavbar">
+    <span class="navbar-toggler-icon custom-cursor"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="simpleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link custom-cursor" href="index.html#work"><b>WORK</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-cursor" href="FUN.html"><b>FUN</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-cursor" href="About_Me.html"><b>ABOUT ME</b></a>
+      </li>
+      <li class="nav-item">
+                <a class="nav-link custom-cursor" 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdeJjcSRHs5UflgBBEeQ8RpbPPujn-58fu4Ey90vSHNv7bhVg/viewform?usp=sharing&ouid=106937313561747509310" target="_blank"><b>INQUIRY FORM</b></a>
+            </li>
+    </ul>
+  </div>
+</nav>
+
+<!----------------------Content------------------->
+<div class="matter main-body mb-5">
+
+  <!-------------Rotating image-
+  <div>
+    <img id="image" src="Images/Rotate_logo_white.png" alt="Rotating Image">
+  </div>
+  --------------->
+
+  <!-----------------Cover Image--------------->
+  <div class="mb-4">
+    <img src="Images/Loire/SLIDE_01.jpg" width="100%">
+  </div>
+
+  <!------------------Content------------------------->
+  <div class="main-body mt-5">
+    <div class="row content_space">
+      <div class="col-md-4">
+        <h1>Loire</h1>
+        <p class="mb-4">Art Direction<br>
+          Identity Design <br>
+          Packaging Design <br>
+          AGENCY- ONE47
+        </p>
+        <div class="case-study-text">
+
+          <p class="mb-2">
+            Blending French allure with nature’s art,<br>
+            LOIRE awakens the soul and heart.<br>
+            Not just skincare, but a ritual divine,<br>
+            A moment of self-care, where you truly shine.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-8 case-study-text">
+        <div class="intro">
+          <p class="mb-2">
+            LOIRE is a skincare brand rooted in ritual, not routine.
+            Inspired by the french river, it encourages beauty that feels returned to,
+            not pursued.
+
+
+          </p>
+          <div class="mb-2">
+            <h3>CHALLENGE</h3>
+            <p>
+              In a skincare market split between clinical minimalism and overt botanicals, LOIRE needed an identity that could balance scientific credibility with natural elegance.
+            </p>
+          </div>
+          <div class="mb-2">
+            <h3>INSIGHT</h3>
+            <p>
+              Modern skincare consumers seek brands that feel restorative rather than performative; trusting formulations as much as the emotional experience of use. </p>
+          </div>
+          <div class="mb-2">
+            <h3>IDEA</h3>
+            <p>
+              Position LOIRE as a brand built on flow and renewal, where structure and softness coexist. </p>
+          </div>
+          <div class="mb-5">
+            <h3>EXECUTION</h3>
+            <p>
+              Guided by the philosophy Flow & Flourish, the identity combines a garden-inspired palette with refined layouts and transparent packaging. Flowing botanical illustrations reveal ingredients openly, reinforcing trust while maintaining a calm, premium aesthetic.
+
+
+
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-----------------Projects------------------------>
+
+  <div class="project_margin">
+    <video autoplay loop muted playsinline class="full-video">
+      <source src="Images/Loire/SLIDE_02.mp4" type="video/mp4">
+    </video>
+  </div>
+
+   <div class="img-container">
+  <div class="two-img-row project_margin">
+  <img src="Images/Loire/SLIDE_03A.jpg" alt="post 1">
+  <img src="Images/Loire/SLIDE_03B.jpg" alt="post 2">
+</div>
+</div>
+
+
+  <div class="project_margin">
+    <img src="Images/Loire/SLIDE_04.jpg" width="100%">
+  </div>
+
+  <div class="img-container">
+  <div class="two-img-row project_margin">
+  <img src="Images/Loire/SLIDE_05A.jpg" alt="post 1">
+  <img src="Images/Loire/SLIDE_05B.jpg" alt="post 2">
+</div>
+</div>
+
+
+  <div class="project_margin">
+    <img src="Images/Loire/SLIDE_06.jpg" width="100%">
+  </div>
+
+  <div class="project_margin">
+    <img src="Images/Loire/SLIDE_08.jpg" width="100%">
+  </div>
+
+  <div class="img-container">
+  <div class="two-img-row project_margin">
+  <img src="Images/Loire/SLIDE_09A-2.jpg" alt="post 1">
+  <img src="Images/Loire/SLIDE_09B.jpg" alt="post 2">
+</div>
+</div>
+
+
+
+  <div class="project_margin">
+    <img src="Images/Loire/SLIDE_11.jpg" width="100%">
+  </div>
+
+  <div class="img-container">
+  <div class="two-img-row project_margin">
+  <img src="Images/Loire/SLIDE_12A.jpg" alt="post 1">
+  <img src="Images/Loire/SLIDE_12B.jpg" alt="post 2">
+</div>
+</div>
+
+
+  <div class="project_margin">
+    <img src="Images/Loire/SLIDE_13.jpg" width="100%">
+  </div>
+
+  <div class="project_margin">
+    <img src="Images/Loire/SLIDE_14.jpg" width="100%">
+  </div>
+
+
+  <div class="project_margin">
+    <img src="Images/Loire/SLIDE_16.jpg" width="100%">
+  </div>
+
+
+
+  <!---------------------Arrows-------------------->
+  <div class="row px-3">
+    <div class="left-arrow">
+      <a href="MAZZEME.html" class="mb-5 custom-cursor">&#8592; Previous</a>
+    </div>
+    <div class="right-arrow">
+      <a href="CARGO.html" class="custom-cursor"> Next &#8594;</a>
+    </div>
+  </div>
+
+
+
+  <!----------------Footer---------------------->
+
+  <div class="footer-box padding-text">
+    <div class="footer-content">
+      <div class="footer-text">
+        <b>
+                    I turn cultural stories <br>into packaging people can hold.
+                    <br>-Shweta
+                </b>
+      </div>
+
+      <div class="links mt-4">
+        <a href="https://www.instagram.com/shweta_feed/" target="_blank" class="custom-cursor"><u>Instagram</u></a>
+        <a href="https://www.behance.net/shwetasingh43" target="_blank" class="custom-cursor"><u>Behance</u></a>
+        <a href="mailto:shweta2861@gmail.com" target="_blank" class="custom-cursor"><u>Email</u></a>
+        <a href="https://www.artstation.com/shweta6" target="_blank" class="custom-cursor"><u>ArtStation</u></a>
+        <a href="https://www.linkedin.com/in/shweta-0609aa222/" target="_blank" class="custom-cursor"><u>LinkedIn</u></a>
+      </div>
+    </div>
+
+    <img src="Images/Home_Page/footer_image.png" class="footer-img" alt="footer image">
+  </div>
+
+
+  <script>
+    const image = document.getElementById('image');
+    let isScrolling = false;
+    let rotationInterval;
+    let rotationAngle = 0;
+    const rotationSpeed = 1; // Adjust the rotation speed as needed
+
+    function rotateImage() {
+      rotationAngle += rotationSpeed;
+      image.style.transform = `rotate(${rotationAngle}deg)`;
+    }
+
+    function startRotation() {
+      rotationInterval = setInterval(() => {
+        rotateImage();
+      }, 4); // Adjust the rotation speed as needed
+    }
+
+    function stopRotation() {
+      clearInterval(rotationInterval);
+    }
+
+    function handleScroll() {
+      if (!isScrolling) {
+        isScrolling = true;
+        startRotation();
+      }
+
+      clearTimeout(isScrolling);
+      isScrolling = setTimeout(() => {
+        isScrolling = false;
+        stopRotation();
+      }, 200); // Adjust the delay value as needed
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+  </script>
+
+
+  <script src="bs/js/jquery.js"></script>
+  <script src="bs/js/popper.js"></script>
+  <script src="bs/js/bootstrap.js"></script>
+  <script src="bs/js/mdb.js"></script>
+
+  <script>
+    $(document).on('click', '.navbar-nav a', function() {
+      $('.navbar-collapse').collapse('hide');
+    });
+  </script>
+
+  <script>
+    const btn = document.querySelector(".read-more-btn");
+    const fullText = document.querySelector(".full-text");
+
+    btn.addEventListener("click", () => {
+      fullText.classList.toggle("d-none");
+
+      if (fullText.classList.contains("d-none")) {
+        btn.textContent = "Read More";
+      } else {
+        btn.textContent = "Read Less";
+      }
+    });
+  </script>
+
+
+</body>
+</html>

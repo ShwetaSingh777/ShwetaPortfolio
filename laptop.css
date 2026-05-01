@@ -1,0 +1,53 @@
+.matter{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#image{
+    margin-right: 15vh;
+    margin-bottom: 10vh;
+    width: 15%;
+}
+
+.column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+}
+
+.laptop_image_padding{
+    padding: 20px;
+}
+
+.case-study-text p {
+    font-size: 19px;
+}
+.case-study-text h3 {
+    font-size: 30px;
+}
+
+.navbar{
+    background-color: rgba(50,50,50,0) !important;
+    padding-right: 40px !important;
+    padding-left: 40px !important;
+}
+
+.padding-text{
+    padding: 25px;
+    font-size: 20px;
+}
+
+.project_margin{
+    margin-bottom: 25px;
+}
+
+.links a{
+    font-size: 30px;
+}
+
+.black-matter{
+    padding-left: 60px;
+    background-color: black;
+    color: white;
+    padding-right: 20vh !important;
+}

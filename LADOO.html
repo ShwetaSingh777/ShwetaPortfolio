@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.svg">
+    <link rel="stylesheet" href="bs/css/bootstrap.css">
+    <link rel="stylesheet" href="bs/css/mdb.css">
+    <link rel="stylesheet" href="bs/css/style.css">
+    <link rel="stylesheet" media="(max-width:500px)" href="mobile.css">
+    <link rel="stylesheet" media="(min-width:501px) and (max-width:768px)" href="tablet.css">
+    <link rel="stylesheet" media="(min-width:769px) and (max-width:1200px)" href="laptop.css">
+    <link rel="stylesheet" media="(min-width:1201px)" href="wide.css">
+    <title>Shweta | The Ladoo Nation</title>
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .custom-cursor {
+            cursor: url('Images/cursor.png'), pointer;
+        }
+
+        @font-face {
+            font-family: "MyCustomFont";
+            src: url("Images/FONTS/SPETETRIAL.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Typewritter";
+            src: url("Images/FONTS/Old Typewriter Font.ttf") format("truetype");
+        }
+
+        /* Existing navbar styling */
+        .navbar {
+            box-shadow: none !important;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            background-color: #e4d0b0;
+        }
+
+         .img-container {
+  width: 100%;
+  margin: 0 auto;    /* centers and prevents overflow */
+  overflow: hidden;  /* ensures nothing spills out */
+}
+
+
+.two-img-row img {
+  width: 50%;
+  min-width: 0; /* prevents flex overflow behavior */
+  object-fit: cover;
+}
+
+
+    .two-img-row {
+  display: flex;
+  width: 100%;
+  gap: 25px; /* center gutter size you can adjust anytime */
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.two-img-row video {
+  width: 50%;
+  min-width: 0;
+  object-fit: cover;
+}
+
+
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: #e4d0b0;
+                font-size: 100px !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                z-index: 9999;
+                opacity: 0;
+                transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+            }
+
+            .navbar-collapse.show {
+                opacity: 1;
+            }
+
+            .navbar-nav {
+                margin-left: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 100px !important;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 32px;
+                margin-bottom: 25px;
+            }
+
+            .navbar-toggler {
+                position: relative;
+                z-index: 10000;
+            }
+
+            .navbar-collapse .nav-link {
+                font-size: 70px !important;
+                text-align: center;
+            }
+        }
+
+
+
+
+
+        .active-head{
+            color: grey !important;
+        }
+        a{
+            text-align: center;
+            font-family: "MyCustomFont", sans-serif;
+            color: #2a0f03;
+            font-size: 30px;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+
+        #image {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            box-shadow: none;
+            z-index: 1;
+        }
+
+
+        body{
+            background-color: #e4d0b0;
+            color: #2a0f03;
+        }
+
+        .full-video {
+            width: 100%;
+            display: block;
+        }
+
+        h1{
+            font-family: "MyCustomFont", sans-serif;
+        }
+
+        h3{
+            font-family: "MyCustomFont", sans-serif;
+        }
+
+        p{
+            font-size: 20px;
+            font-family: "Typewritter", sans-serif;
+        }
+
+        .instagram{
+            font-size: 20px;
+            font-family: "Typewritter", sans-serif;
+            text-decoration: underline;
+        }
+
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1.5rem;
+            text-decoration: underline;
+            font-family: "Typewritter";
+        }
+
+        .d-none {
+            display: none;
+        }
+
+
+
+        .left-arrow{
+            display: block;
+            width: 50%;
+            float: left;
+            font-size: 25px;
+            color: #2a0f03;
+        }
+        .left-arrow a,.right-arrow a{
+            color: #2a0f03 !important;
+        }
+        .right-arrow{
+            display: block;
+            width: 50%;
+            float: right;
+            text-align: right;
+            font-size: 25px;
+            color: #2a0f03;
+        }
+
+
+
+        .footer-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* keeps text at top */
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 65%; /* prevents text from touching image */
+        }
+
+        .footer-img {
+            width: 220px; /* adjust as needed */
+        }
+
+        /* Hide image on mobile */
+        @media (max-width: 767px) {
+            .footer-box {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .footer-img {
+                display: none;
+            }
+
+            .footer-content {
+                max-width: 100%;
+            }
+        }
+
+        .footer-text{
+            font-family: 'Typewritter', sans-serif;
+            color: #2a0f03 !important;
+        }
+        .links{
+            font-family: 'Typewritter', sans-serif;
+        }
+        .links a{
+            color: #2a0f03 !important;
+            margin-right: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<!--------------navbar-------------->
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <a class="navbar-brand" href="index.html">
+        <img src="Images/Home_Page/LOGO.png" class="custom-cursor" width="150px">
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#simpleNavbar">
+        <span class="navbar-toggler-icon custom-cursor"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="simpleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link custom-cursor" href="index.html#work"><b>WORK</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link custom-cursor" href="FUN.html"><b>FUN</b></a>
+            </li>
+            <li class="nav-item">
+        <a class="nav-link custom-cursor" href="About_Me.html"><b>ABOUT ME</b></a>
+      </li>
+            <li class="nav-item">
+                <a class="nav-link custom-cursor" 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdeJjcSRHs5UflgBBEeQ8RpbPPujn-58fu4Ey90vSHNv7bhVg/viewform?usp=sharing&ouid=106937313561747509310" target="_blank"><b>INQUIRY FORM</b></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!----------------------Content------------------->
+<div class="matter main-body mb-5">
+
+    <!-------------Rotating image
+    <div>
+      <img id="image" src="Images/Rotate_logo_white.png" alt="Rotating Image">
+    </div>
+    ---------------->
+
+    <!-----------------Cover Image--------------->
+     <div class="img-container">
+  <div class="two-img-row project_margin">
+  <img src="Images/Ladoo/SLIDE_01A.jpg" alt="post 1">
+  <img src="Images/Ladoo/SLIDE_01B.jpg" alt="post 2">
+</div>
+</div>
+
+    <!------------------Content------------------------->
+    <div class="main-body mt-5">
+        <div class="row content_space">
+            <div class="col-md-4">
+                <h1>The Ladoo Nation</h1>
+                <p class="mb-4">Art Direction <br>
+                    Packaging Design<br>
+                    Illustration
+                </p>
+                <div class="case-study-text">
+
+                    <p class="mb-2">
+                        From every land, a flavor tied,<br>
+Stories shaped and rolled inside.<br>
+Simple forms, yet rich and wide,<br>
+India lives in every bite.<br>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-8 case-study-text">
+                <div class="intro">
+                    <p class="mb-2">
+                        A culturally immersive sweets packaging system that explores India’s diversity 
+                        through regional patterns, flavors, and experiences using ladoos as a unifying medium.
+                    </p>
+                    <div class="mb-2">
+                        <h3>CHALLENGE</h3>
+                        <p>
+                            To represent India’s vast cultural diversity in a cohesive packaging system without 
+                            reducing it to clichés or limiting it to state-based identities. 
+                             </p>
+                    </div>
+                    <div class="mb-2">
+                        <h3>INSIGHT</h3>
+                        <p>
+                            While India is incredibly diverse, everyday objects like food, especially ladoos, 
+                            act as a common thread, transforming across regions while still feeling familiar and shared.
+                        </p>
+                    </div>
+
+                    <div class="mb-2">
+                        <h3>IDEA</h3>
+                        <p>
+                            Use ladoos as a cultural lens to explore India, not by geography, but through 
+                            experiences and traits, translating regional identities into distinct visual patterns and narratives.
+
+                        </p>
+                    </div>
+                    <div class="mb-5">
+                        <h3>EXECUTION</h3>
+                        <p>
+                            A circular packaging system inspired by the form of a ladoo, 
+                            featuring contemporary adaptations of traditional Indian patterns 
+                            and vibrant regional color palettes. The system is divided into 
+                            eight thematic categories, each representing a unique cultural 
+                            experience, creating a unified yet diverse visual language.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-----------------Projects------------------------>
+
+    <div class="project_margin">
+        <img src="Images/Ladoo/SLIDE_02.jpg" width="100%">
+    </div>
+
+
+    <div class="img-container">
+  <div class="two-img-row project_margin">
+  <video width="100%" autoplay loop muted playsinline>
+        <source src="Images/Ladoo/SLIDE_03A.mp4" type="video/mp4">
+      </video>
+      <video width="100%" autoplay loop muted playsinline>
+        <source src="Images/Ladoo/SLIDE_03B.mp4" type="video/mp4">
+      </video>
+</div>
+</div>
+
+<div class="img-container">
+  <div class="two-img-row project_margin">
+  <video width="100%" autoplay loop muted playsinline>
+        <source src="Images/Ladoo/SLIDE_03C.mp4" type="video/mp4">
+      </video>
+  <video width="100%" autoplay loop muted playsinline>
+        <source src="Images/Ladoo/SLIDE_03D.mp4" type="video/mp4">
+      </video>
+</div>
+</div>
+
+     <div class="img-container">
+  <div class="two-img-row project_margin">
+  <video width="100%" autoplay loop muted playsinline>
+        <source src="Images/Ladoo/SLIDE_04A.mp4" type="video/mp4">
+      </video>
+  <video width="100%" autoplay loop muted playsinline>
+        <source src="Images/Ladoo/SLIDE_04B.mp4" type="video/mp4">
+      </video>
+</div>
+</div>
+
+<div class="img-container">
+  <div class="two-img-row project_margin">
+  <video width="100%" autoplay loop muted playsinline>
+        <source src="Images/Ladoo/SLIDE_04C.mp4" type="video/mp4">
+      </video>
+  <video width="100%" autoplay loop muted playsinline>
+        <source src="Images/Ladoo/SLIDE_04D.mp4" type="video/mp4">
+      </video>
+</div>
+</div>
+
+<div class="project_margin">
+        <img src="Images/Ladoo/SLIDE_05.jpg" width="100%">
+    </div>
+
+    <div class="img-container">
+  <div class="two-img-row project_margin">
+  <video width="100%" autoplay loop muted playsinline>
+        <source src="Images/Ladoo/SLIDE_06A.mp4" type="video/mp4">
+      </video>
+  <img src="Images/Ladoo/SLIDE_06B.jpg" alt="post 2">
+</div>
+</div>
+
+<div class="project_margin">
+        <img src="Images/Ladoo/SLIDE_07.jpg" width="100%">
+    </div>
+
+<div class="img-container">
+  <div class="two-img-row project_margin">
+  <img src="Images/Ladoo/SLIDE_08A.jpg" alt="post 1">
+  <img src="Images/Ladoo/SLIDE_08B.jpg" alt="post 2">
+</div>
+</div>
+
+    <div class="project_margin">
+        <img src="Images/Ladoo/SLIDE_09.jpg" width="100%">
+    </div>
+
+
+
+    <!---------------------Arrows-------------------->
+    <div class="row px-3">
+        <div class="left-arrow">
+            <a href="Phalam.html" class="mb-5 custom-cursor">&#8592; Previous</a>
+        </div>
+        <div class="right-arrow">
+            <a href="YARCHAGUMBA.html" class="custom-cursor"> Next &#8594;</a>
+        </div>
+    </div>
+
+
+
+    <!----------------Footer---------------------->
+
+    <div class="footer-box padding-text">
+        <div class="footer-content">
+            <div class="footer-text">
+                <b>
+                    I turn cultural stories <br>into packaging people can hold.
+                    <br>-Shweta
+                </b>
+            </div>
+
+            <div class="links mt-4">
+                <a href="https://www.instagram.com/shweta_feed/" target="_blank" class="custom-cursor"><u>Instagram</u></a>
+                <a href="https://www.behance.net/shwetasingh43" target="_blank" class="custom-cursor"><u>Behance</u></a>
+                <a href="mailto:shweta2861@gmail.com" target="_blank" class="custom-cursor"><u>Email</u></a>
+                <a href="https://www.artstation.com/shweta6" target="_blank" class="custom-cursor"><u>ArtStation</u></a>
+                <a href="https://www.linkedin.com/in/shweta-0609aa222/" target="_blank" class="custom-cursor"><u>LinkedIn</u></a>
+            </div>
+        </div>
+
+        <img src="Images/Home_Page/footer_image.png" class="footer-img" alt="footer image">
+    </div>
+
+
+    <script>
+        const image = document.getElementById('image');
+        let isScrolling = false;
+        let rotationInterval;
+        let rotationAngle = 0;
+        const rotationSpeed = 1; // Adjust the rotation speed as needed
+
+        function rotateImage() {
+            rotationAngle += rotationSpeed;
+            image.style.transform = `rotate(${rotationAngle}deg)`;
+        }
+
+        function startRotation() {
+            rotationInterval = setInterval(() => {
+                rotateImage();
+            }, 4); // Adjust the rotation speed as needed
+        }
+
+        function stopRotation() {
+            clearInterval(rotationInterval);
+        }
+
+        function handleScroll() {
+            if (!isScrolling) {
+                isScrolling = true;
+                startRotation();
+            }
+
+            clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                isScrolling = false;
+                stopRotation();
+            }, 200); // Adjust the delay value as needed
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+    </script>
+
+
+    <script src="bs/js/jquery.js"></script>
+    <script src="bs/js/popper.js"></script>
+    <script src="bs/js/bootstrap.js"></script>
+    <script src="bs/js/mdb.js"></script>
+
+    <script>
+        $(document).on('click', '.navbar-nav a', function() {
+            $('.navbar-collapse').collapse('hide');
+        });
+    </script>
+
+    <script>
+        const btn = document.querySelector(".read-more-btn");
+        const fullText = document.querySelector(".full-text");
+
+        btn.addEventListener("click", () => {
+            fullText.classList.toggle("d-none");
+
+            if (fullText.classList.contains("d-none")) {
+                btn.textContent = "Read More";
+            } else {
+                btn.textContent = "Read Less";
+            }
+        });
+    </script>
+
+
+</body>
+</html>

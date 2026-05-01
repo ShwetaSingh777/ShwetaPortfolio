@@ -1,0 +1,53 @@
+.matter{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#image{
+    visibility: hidden;
+}
+
+.column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+}
+
+.mobile_margin_below{
+    margin-bottom: 20px !important;
+}
+
+.navbar{
+    background-color: rgba(255,255,255,0) !important;
+    padding-right: 40px !important;
+    padding-left: 40px !important;
+}
+
+.padding-text{
+    padding-top: 20px;
+    font-size: 17px;
+}
+
+.case-study-text p {
+    font-size: 17px;
+}
+.case-study-text h3 {
+    font-size: 26px;
+}
+
+.project_margin{
+    margin-bottom: 15px;
+}
+
+.links a{
+    font-size: 20px;
+}
+
+.black-matter{
+    padding-left: 50px;
+    background-color: black;
+    color: white;
+    padding-right: 20vh !important;
+}
+
+
