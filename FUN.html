@@ -41,57 +41,80 @@
       top: 0;
       width: 100%;
       z-index: 2;
-      background-color: #e4d0b0;
+      background: linear-gradient(
+    to bottom,
+    rgba(228, 208, 176, 1),   /* 100% opacity */
+    rgba(228, 208, 176, 0)    /* 0% opacity */
+  );
     }
+
+     #image {
+             width: 3%;
+    position: fixed;
+    right: 10px;   /* adjust as needed */
+    bottom: 10px;
+    animation: floatUpDown 1.5s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
 
 
     @media (max-width: 991px) {
-      .navbar-collapse {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #e4d0b0;
-        font-size: 100px !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        z-index: 9999;
-        opacity: 0;
-        transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
-      }
+            .navbar-collapse {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: #e4d0b0;
+                font-size: 40px !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                z-index: 9999;
+                opacity: 0;
+                transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+            }
 
-      .navbar-collapse.show {
-        opacity: 1;
-      }
+            .navbar-collapse.show {
+                opacity: 1;
+            }
 
-      .navbar-nav {
-        margin-left: 0 !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 100px !important;
-      }
+            .navbar-nav {
+                margin-left: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 40px !important;
+            }
 
-      .navbar-nav .nav-link {
-        font-size: 32px;
-        margin-bottom: 25px;
-      }
+            .navbar-nav .nav-link {
+                font-size: 20px;
+                margin-bottom: 10px !important;
+            }
 
-      .navbar-toggler {
-        position: relative;
-        z-index: 10000;
-      }
+            .navbar-toggler {
+                position: relative;
+                z-index: 10000;
+            }
 
-      .navbar-collapse .nav-link {
-        font-size: 70px !important;
-        text-align: center;
-      }
-    }
-
+            .navbar-collapse .nav-link {
+                font-size: 40px !important;
+                text-align: center;
+            }
+        }
 
 
 
@@ -255,6 +278,9 @@
 
 <!----------------------Content------------------->
 <div class="matter main-body mb-5">
+  <div>
+        <img id="image" src="Images/Home_Page/ARROW.png" alt="Rotating Image">
+    </div>
 
   <!-------------Rotating image----
   <div>
@@ -378,29 +404,7 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-4 project_margin">
-      <img src="Images/Fun/SLIDE_11A.png" width="100%">
-    </div>
-    <div class="col-md-4 project_margin">
-      <img src="Images/Fun/SLIDE_11B.png" width="100%">
-    </div>
-    <div class="col-md-4 project_margin">
-      <img src="Images/Fun/SLIDE_11C.png" width="100%">
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-4 project_margin">
-      <img src="Images/Fun/SLIDE_12A.png" width="100%">
-    </div>
-    <div class="col-md-4 project_margin">
-      <img src="Images/Fun/SLIDE_12B.png" width="100%">
-    </div>
-    <div class="col-md-4 project_margin">
-      <img src="Images/Fun/SLIDE_12C.png" width="100%">
-    </div>
-  </div>
 
 
 
@@ -429,44 +433,7 @@
   </div>
 
 
-  <script>
-    const image = document.getElementById('image');
-    let isScrolling = false;
-    let rotationInterval;
-    let rotationAngle = 0;
-    const rotationSpeed = 1; // Adjust the rotation speed as needed
-
-    function rotateImage() {
-      rotationAngle += rotationSpeed;
-      image.style.transform = `rotate(${rotationAngle}deg)`;
-    }
-
-    function startRotation() {
-      rotationInterval = setInterval(() => {
-        rotateImage();
-      }, 4); // Adjust the rotation speed as needed
-    }
-
-    function stopRotation() {
-      clearInterval(rotationInterval);
-    }
-
-    function handleScroll() {
-      if (!isScrolling) {
-        isScrolling = true;
-        startRotation();
-      }
-
-      clearTimeout(isScrolling);
-      isScrolling = setTimeout(() => {
-        isScrolling = false;
-        stopRotation();
-      }, 200); // Adjust the delay value as needed
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-  </script>
+  
 
 
   <script src="bs/js/jquery.js"></script>
@@ -498,4 +465,3 @@
 
 </body>
 </html>
-

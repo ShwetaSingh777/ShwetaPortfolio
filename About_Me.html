@@ -51,7 +51,10 @@
       top: 0;
       width: 100%;
       z-index: 2;
-      background-color: #dbcf9b;
+      background: linear-gradient(
+    to bottom,
+    rgba(228, 208, 176, 1),   /* 100% opacity */
+    rgba(228, 208, 176, 0)    /* 0% opacity */)
     }
 
     .features a {
@@ -66,51 +69,50 @@
 
 
     @media (max-width: 991px) {
-      .navbar-collapse {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #e4d0b0;
-        font-size: 100px !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        z-index: 9999;
-        opacity: 0;
-        transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
-      }
+            .navbar-collapse {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: #e4d0b0;
+                font-size: 40px !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                z-index: 9999;
+                opacity: 0;
+                transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+            }
 
-      .navbar-collapse.show {
-        opacity: 1;
-      }
+            .navbar-collapse.show {
+                opacity: 1;
+            }
 
-      .navbar-nav {
-        margin-left: 0 !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 100px !important;
-      }
+            .navbar-nav {
+                margin-left: 0 !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 40px !important;
+            }
 
-      .navbar-nav .nav-link {
-        font-size: 32px;
-        margin-bottom: 25px;
-      }
+            .navbar-nav .nav-link {
+                font-size: 20px;
+                margin-bottom: 10px !important;
+            }
 
-      .navbar-toggler {
-        position: relative;
-        z-index: 10000;
-      }
+            .navbar-toggler {
+                position: relative;
+                z-index: 10000;
+            }
 
-      .navbar-collapse .nav-link {
-        font-size: 70px !important;
-        text-align: center;
-      }
-    }
-
+            .navbar-collapse .nav-link {
+                font-size: 40px !important;
+                text-align: center;
+            }
+        }
 
 
 
@@ -305,21 +307,21 @@
         <div class="mb-2 case-study-text ">
           <p>
             <b>Freelance Designer </b> <br>
-            September 2025- Present <br>
+            Sep 2025- Present <br>
           </p>
         </div>
 
         <div class="mb-2">
           <p>
             <b>Communication Designer- One47 </b> <br>
-            May 2024- August 2025 <br>
+            May 2024- Aug 2025 <br>
           </p>
         </div>
 
         <div class="mb-2">
           <p>
             <b> Content Designer- Girltelligence </b><br>
-            June 2023- April 2024 <br>
+            Feb 2023- Apr 2024 <br>
           </p>
         </div>
 

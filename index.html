@@ -52,11 +52,15 @@
             top: 0;
             width: 100%;
             z-index: 2;
-            background-color: #e4d0b0;
+            background: linear-gradient(
+    to bottom,
+    rgba(228, 208, 176, 1),   /* 100% opacity */
+    rgba(228, 208, 176, 0)    /* 0% opacity */
+  );
         }
 
         #image {
-             width: 8%;
+             width: 3%;
     position: fixed;
     right: 10px;   /* adjust as needed */
     bottom: 10px;
@@ -75,6 +79,13 @@
     }
 }
 
+h2{
+    font-family: 'American Typewriter Condensed', sans-serif;
+    color: #2a0f03 !important;
+    margin-top: 10px;
+    text-align: left !important;
+}
+
 
 
         @media (max-width: 991px) {
@@ -85,7 +96,7 @@
                 width: 100%;
                 height: 100vh;
                 background-color: #e4d0b0;
-                font-size: 100px !important;
+                font-size: 40px !important;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -104,12 +115,12 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                font-size: 100px !important;
+                font-size: 40px !important;
             }
 
             .navbar-nav .nav-link {
-                font-size: 32px;
-                margin-bottom: 25px;
+                font-size: 20px;
+                margin-bottom: 10px !important;
             }
 
             .navbar-toggler {
@@ -118,12 +129,10 @@
             }
 
             .navbar-collapse .nav-link {
-                font-size: 70px !important;
+                font-size: 40px !important;
                 text-align: center;
             }
         }
-
-
 
 
 
@@ -255,93 +264,54 @@
     <!-----------------Projects------------------------>
 
 
-    <div id="work" class="row laptop_image_padding">
-        <div class="col-md-6 mobile_margin_below">
-            <a href="CARGO.html">
-                <picture>
-                    <!-- Mobile first -->
-                    <source srcset="Images/Home_Page/CARGO.png" media="(max-width: 767px)">
-                    <!-- Desktop -->
-                    <source srcset="Images/Home_Page/CARGO.png" media="(min-width: 768px)">
-
-                    <!-- Fallback -->
-                    <img src="Images/Home_Page/CARGO.png" alt="Responsive banner" class="img-fluid">
-                </picture>
-            </a>
-           
-        </div>
-        <div class="col-md-6 mobile_margin_below">
-             <a href="Phalam.html">
-                <picture>
-                    <!-- Mobile first -->
-                    <source srcset="Images/Home_Page/PHALAMpng" media="(max-width: 767px)">
-                    <!-- Desktop -->
-                    <source srcset="Images/Home_Page/PHALAM.png" media="(min-width: 768px)">
-
-                    <!-- Fallback -->
-                    <img src="Images/Home_Page/PHALAM.png" alt="Responsive banner" class="img-fluid">
-                </picture>
-            </a>
-        </div>
+    <div class="project_margin" id="work">
+        <a href="CARGO.html">
+        <img src="Images/Cargo/SLIDE_004.jpg" width="100%">
+        
+                <h2>Cargo No. 1966- Premium Hong Kong Tea</h2>
+                </a>
     </div>
 
-
-    <div class="row laptop_image_padding">
-        <div class="col-md-6 mobile_margin_below">
-            <a href="LADOO.html">
-            <picture>
-                <!-- Mobile first -->
-                <source srcset="Images/Home_Page/LADOO.png" media="(max-width: 767px)">
-                <!-- Desktop -->
-                <source srcset="Images/Home_Page/LADOO.png" media="(min-width: 768px)">
-
-                <!-- Fallback -->
-                <img src="Images/Home_Page/LADOO.png" alt="Responsive banner" class="img-fluid">
-            </picture>
-        </a>
-        </div>
-        <div class="col-md-6 mobile_margin_below">
-            <a href="YARCHAGUMBA.html">
-                <picture>
-                    <!-- Mobile first -->
-                    <source srcset="Images/Home_Page/YARCHA.png" media="(max-width: 767px)">
-                    <!-- Desktop -->
-                    <source srcset="Images/Home_Page/YARCHA.png" media="(min-width: 768px)">
-
-                    <!-- Fallback -->
-                    <img src="Images/Home_Page/YARCHA.png" alt="Responsive banner" class="img-fluid">
-                </picture>
-            </a>
-        </div>
+    <div class="project_margin">
+        <a href="Phalam.html">
+        <img src="Images/Phalam/BEHANCE_01.jpg" width="100%">
+        
+                <h2>Phalam- Premium Fruit Gifting</h2>
+                </a>
     </div>
 
-     <div class="row laptop_image_padding">
-        <div class="col-md-6 mobile_margin_below">
-            <a href="MAZZEME.html">
-            <picture>
-                <!-- Mobile first -->
-                <source srcset="Images/Home_Page/MAZZEME.png" media="(max-width: 767px)">
-                <!-- Desktop -->
-                <source srcset="Images/Home_Page/MAZZEME.png" media="(min-width: 768px)">
+    <div class="project_margin">
+        <a href="MAZZEME.html">
+        <img src="Images/Mazzeme/SLIDE_01-2.jpg" width="100%">
+        
+                <h2>Mazzeme- Bohemian Lifestyle</h2>
+                </a>
+    </div>
 
-                <!-- Fallback -->
-                <img src="Images/Home_Page/MAZZEME.png" alt="Responsive banner" class="img-fluid">
-            </picture>
-        </a>
-        </div>
-        <div class="col-md-6 mobile_margin_below">
-            <a href="LOIRE.html">
-                <picture>
-                    <!-- Mobile first -->
-                    <source srcset="Images/Home_Page/LOIRE.png" media="(max-width: 767px)">
-                    <!-- Desktop -->
-                    <source srcset="Images/Home_Page/LOIRE.png" media="(min-width: 768px)">
+    <div class="project_margin">
+        <a href="LADOO.html">
+        <img src="Images/Ladoo/SLIDE_05.jpg" width="100%">
+        
+                <h2>The Ladoo Nation- Premium Indian Sweets</h2>
+                </a>
+    </div>
 
-                    <!-- Fallback -->
-                    <img src="Images/Home_Page/LOIRE.png" alt="Responsive banner" class="img-fluid">
-                </picture>
-            </a>
-        </div>
+    <div class="project_margin">
+        <a href="YARCHAGUMBA.html">
+        <img src="Images/Yarchagumba/SLIDE_01.jpg" width="100%">
+        
+                <h2>Yarchagumba- Himalayan Luxury Wellness</h2>
+                </a>
+    </div>
+
+    
+
+    <div class="project_margin">
+        <a href="LOIRE.html">
+        <img src="Images/Loire/SLIDE_01.jpg" width="100%">
+        
+                <h2>Loire- French Valley-inspired Skincare</h2>
+                </a>
     </div>
 
 
